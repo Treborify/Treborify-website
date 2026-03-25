@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Treborify | Passive Income Tips & Strategies</title>
+    <meta name="description" content="Actionable tips, strategies, and insights on building passive income streams, side hustles, and digital businesses.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .blog-hero { padding: 140px 0 60px; background: var(--gray-50); text-align: center; }
+        .blog-hero h1 { font-size: 2.5rem; font-weight: 800; color: var(--dark); margin-bottom: 12px; }
+        .blog-hero p { font-size: 1.1rem; color: var(--gray-500); }
+        .blog-grid { padding: 60px 0 100px; }
+        .posts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 32px; }
+        .post-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-xl); overflow: hidden; transition: var(--transition); }
+        .post-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-xl); }
+        .post-thumb { height: 200px; background: var(--gray-100); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+        .post-content { padding: 24px; }
+        .post-content h2 { font-size: 1.2rem; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+        .post-content h2 a { color: var(--dark); }
+        .post-content h2 a:hover { color: var(--primary); }
+        .post-content p { font-size: 0.9rem; color: var(--gray-500); line-height: 1.6; margin-bottom: 12px; }
+        .post-meta { font-size: 0.8rem; color: var(--gray-400); }
+        .empty-state { text-align: center; padding: 80px 0; }
+        .empty-state h2 { font-size: 1.5rem; color: var(--gray-600); margin-bottom: 12px; }
+        .empty-state p { color: var(--gray-400); margin-bottom: 24px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="/" class="logo">
+                <span class="logo-icon">T</span>
+                <span class="logo-text">Treborify</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/#products">Products</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/blog/" class="active">Blog</a></li>
+                <li><a href="/#newsletter" class="btn btn-nav">Get Free Guide</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="blog-hero">
+        <div class="container">
+            <h1>Blog</h1>
+            <p>Actionable strategies for building income that works without you</p>
+        </div>
+    </section>
+
+    <section class="blog-grid">
+        <div class="container">
+            <div class="empty-state">
+                <h2>Coming Soon</h2>
+                <p>We're writing our first posts right now. Subscribe to get notified when we publish.</p>
+                <a href="/#newsletter" class="btn btn-primary">Get Notified</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Treborify. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/main.js"></script>
+</body>
+</html>
