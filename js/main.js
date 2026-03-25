@@ -48,17 +48,51 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// --- Newsletter form ---
+// --- Newsletter form (Kit / ConvertKit integration) ---
 const newsletterForm = document.getElementById('newsletterForm');
 if (newsletterForm) {
-    newsletterForm.addEventListener('submit', (e) => {
+    newsletterForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const email = newsletterForm.querySelector('input[type="email"]').value;
+        const emailInput = newsletterForm.querySelector('input[type="email"]');
+        const submitBtn = newsletterForm.querySelector('button[type="submit"]');
+        const email = emailInput.value.trim();
         
-        // Placeholder - replace with actual email service integration
-        // (ConvertKit, Mailchimp, etc.)
-        alert('Thanks for subscribing! Check your inbox for the free guide.');
-        newsletterForm.reset();
+        if (!email) return;
+        
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        
+        try {
+            const response = await fetch('https://api.convertkit.com/v3/forms/9248596/subscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    api_key: '7OEYJSBVXKObxBUTxT-wzA',
+                    email: email
+                })
+            });
+            
+            if (response.ok) {
+                submitBtn.textContent = 'Subscribed!';
+                submitBtn.style.background = '#10b981';
+                emailInput.value = '';
+                setTimeout(() => {
+                    submitBtn.textContent = 'Send Me the Guide';
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                }, 3000);
+            } else {
+                throw new Error('Subscription failed');
+            }
+        } catch (err) {
+            submitBtn.textContent = 'Try Again';
+            submitBtn.style.background = '#ef4444';
+            submitBtn.disabled = false;
+            setTimeout(() => {
+                submitBtn.textContent = 'Send Me the Guide';
+                submitBtn.style.background = '';
+            }, 3000);
+        }
     });
 }
 
