@@ -11,6 +11,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.treborify.com">
     <link rel="canonical" href="https://www.treborify.com">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -255,6 +256,12 @@
                     </ul>
                 </div>
                 <div class="footer-links">
+                    <h4>Follow Us</h4>
+                    <ul>
+                        <li><a href="https://www.tiktok.com/@treborify" target="_blank" rel="noopener">TikTok</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
                     <h4>Legal</h4>
                     <ul>
                         <li><a href="/privacy.html">Privacy Policy</a></li>
@@ -269,6 +276,30 @@
         </div>
     </footer>
 
+    <!-- Cookie Consent Banner -->
+    <div id="cookieBanner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#1e293b; padding:16px 24px; z-index:9999; border-top:1px solid #374151;">
+        <div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+            <p style="color:#9ca3af; font-size:0.9rem; margin:0; flex:1;">We use cookies to improve your experience and analyze site traffic. By continuing, you agree to our <a href="/privacy.html" style="color:#3b82f6;">Privacy Policy</a>.</p>
+            <button onclick="acceptCookies()" style="background:#2563eb; color:white; border:none; padding:8px 20px; border-radius:6px; font-weight:600; cursor:pointer; font-size:0.85rem;">Accept</button>
+        </div>
+    </div>
+
     <script src="js/main.js"></script>
+    <script>
+        // Cookie consent
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'true');
+            document.getElementById('cookieBanner').style.display = 'none';
+        }
+        if (!localStorage.getItem('cookieConsent')) {
+            document.getElementById('cookieBanner').style.display = 'block';
+        }
+
+        // Google Analytics placeholder - replace GA_MEASUREMENT_ID with your actual ID
+        // window.dataLayer = window.dataLayer || [];
+        // function gtag(){dataLayer.push(arguments);}
+        // gtag('js', new Date());
+        // gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
 </body>
 </html>
