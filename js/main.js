@@ -76,11 +76,18 @@ if (newsletterForm) {
                 submitBtn.textContent = 'Subscribed!';
                 submitBtn.style.background = '#10b981';
                 emailInput.value = '';
+                
+                // Show download link
+                const disclaimer = document.querySelector('.newsletter-disclaimer');
+                if (disclaimer) {
+                    disclaimer.innerHTML = '<a href="/downloads/free-starter-guide.pdf" target="_blank" style="color: #10b981; font-size: 1rem; font-weight: 600;">Download Your Free Guide Here</a><br><span style="font-size: 0.8rem; color: #9ca3af;">We also sent it to your email.</span>';
+                }
+                
                 setTimeout(() => {
                     submitBtn.textContent = 'Send Me the Guide';
                     submitBtn.style.background = '';
                     submitBtn.disabled = false;
-                }, 3000);
+                }, 5000);
             } else {
                 throw new Error('Subscription failed');
             }
